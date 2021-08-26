@@ -1,0 +1,221 @@
+<!--
+<header>の部分
+576px以上の画面幅のとき、会社情報／ニュース／採用情報／お問い合わせの各メニュー名を表示する（それ未満なら折りたたむ）ようにしましょう
+よくあるサイトのように画面左上に「サンプル株式会社」のサイト名のリンクを用意しましたが、水色のままなので、ここに表示するリンクとして適切な表示がされるようなclass名を追加しましょう
+「お問い合わせ」のリンクに、お問い合わせページを表示していることがわかりやすくなるclass名を追加しましょう
+-->
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+
+    <title>お問い合わせ | サンプル株式会社</title>
+</head>
+
+<body>
+    <header>
+        <!-- 576px以上の画面幅のとき、メニューを表示する（それ未満なら折りたたむ）指定を追加 ⇒ navbar-expand-sm-->
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
+            <div class="container-fluid">
+                <!-- 画面左上に表示するサイト名のリンクとして適切な表示をするための指定を追加 ⇒ navbar-brand -->
+                <a href="#" class="navbar-brand">サンプル株式会社</a>
+
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav-bar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="nav-bar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#" class="nav-link">会社情報</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">ニュース</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">採用情報</a></li>
+                        <!-- お問い合わせページを表示していることをわかりやすくする設定を追加 ⇒ active-->
+                        <li class="nav-item"><a href="#" class="nav-link active">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="mt-4 pb-4 border-bottom">お問い合わせ</h1>
+
+<!--
+◆「お電話」の部分
+グリッドを使ったレイアウトが適用されるようにしましょう。さらに、次のような2カラムレイアウトの設定としましょう
+    576px以上の画面幅のとき、左側（「お電話」の見出し部分）を3つ分のカラム幅にしましょう
+    576px以上の画面幅のとき、右側（電話番号の表の部分）を9つ分のカラム幅にしましょう
+「お電話」の左にBootstrap Iconsのアイコンを表示しましょう。アイコンは、アイコンは、見本と同じ見た目のものを選んでください。<img> に、適切な altテキスト を設定してください
+電話番号の表に、テーブルの装飾が適用されるようにしましょう。さらに、次のような表の装飾の設定としましょう
+    表に枠（罫線）を表示しましょう
+    各行の背景色は白・灰色を交互で表示しましょう
+電話番号の表の下に「営業時間」を説明する枠を カード で作成してください
+    「営業時間」の見出しをカードのヘッダー部分としましょう
+    「平日10時〜19時（土日・祝日は対応しておりません）」と書かれた部分をカードの本文部分としましょう
+「営業時間」の左にBootstrap Iconsのアイコンを表示しましょう。アイコンは、アイコンは、見本と同じ見た目のものを選んでください。<img> に、適切な altテキスト を設定してください
+-->
+        <!-- グリッドを使うための指定を追加 ⇒ container-->
+        <div class="container mt-4">
+            <!-- 576px以上の画面幅のとき、左側は3つ分のカラム幅で表示する指定を追加 ⇒ col-sm-3 -->
+            <div class="col-sm-3">
+                <!-- 電話に関するBootstrap Iconsのアイコンを「お電話：」の左に追加 -->
+                <img class="mb-1" src="icons/telephone-fill.svg" alt="お電話"> <strong>お電話：</strong>
+            </div>
+
+            <!-- 576px以上の画面幅のとき、右側は9つ分のカラム幅で表示する指定を追加 ⇒ col-sm-9 -->
+            <div class="col-sm-9">
+                <p>該当する内容の電話番号におかけください。</p>
+                <!-- テーブルの装飾を適用する指定を追加 class="table"-->
+                <!-- さらにテーブルへ枠を追加する指定、行ごとの背景色が交互に変わる指定を追加 ⇒ table-striped table-bordered -->
+                <table class="mt-4 table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>内容</th>
+                            <th>電話番号</th>
+                            <th>担当</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>サービスに関するお問い合わせ</td>
+                            <td>03-0000-0000</td>
+                            <td>煌木</td>
+                        </tr>
+                        <tr>
+                            <td>採用に関するお問い合わせ</td>
+                            <td>03-0000-0001</td>
+                            <td>煌田</td>
+                        </tr>
+                        <tr>
+                            <td>会社情報に関するお問い合わせ</td>
+                            <td>03-0000-0002</td>
+                            <td>煌山</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- カードの装飾を適用 ⇒ card-->
+                <div class="card">
+                    <!-- カードのタイトル部分として設定 ⇒ card-header -->
+                    <div class="card-header">
+                        <!-- 営業時間の情報に関するBootstrap Iconsのアイコンを「営業時間」の左に追加 -->
+                        <img class="mb-1" src="icons/info-circle-fill.svg" alt="営業時間"> 営業時間
+                    </div>
+
+                    <!-- カードの本文部分として設定 ⇒ card-body-->
+                    <div class="card-body">
+                        平日10時〜19時（土日・祝日は対応しておりません）
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--
+◆「メール」の部分
+グリッドを使ったレイアウトが適用されるようにしましょう。さらに、次のような2カラムレイアウトの設定としましょう
+    576px以上の画面幅のとき、左側（「メール」の見出し部分）を3つ分のカラム幅にしましょう
+    576px以上の画面幅のとき、右側（入力フォームの部分）を9つ分のカラム幅にしましょう
+「メール」の左にBootstrap Iconsのアイコンを表示しましょう。アイコンは、アイコンは、見本と同じ見た目のものを選んでください。<img> に、適切な altテキスト を設定してください
+フォームの各ラベルと入力エリアの部分
+    グリッドを使ったレイアウトが適用されるようにしましょう。さらに、次のような2カラムレイアウトの設定としましょう
+        576px以上の画面幅のとき、左側（ラベル部分）を3つ分のカラム幅にしましょう
+        576px以上の画面幅のとき、右側（フォーム部品の部分）を9つ分のカラム幅にしましょう
+送信ボタンの部分のみラベルは不要です。代わりに、左側3つ分のカラム幅の隙間を設定し、右側9つ分のカラム幅で送信ボタンの表示部分を設定しましょう。（他の部品と同じく576px以上の画面幅での設定とします）
+送信ボタンは、緑色にしましょう
+送信ボタンは、指定のカラム数の幅に対して100％の幅でボタンが表示されるようにしましょう
+-->
+        <!-- グリッドを使うための指定を追加 ⇒ container -->
+        <div class="container mt-4">
+            <!-- 576px以上の画面幅のとき、左側は3つ分のカラム幅で表示する指定を追加 ⇒ col-sm-3 -->
+            <div class="col-sm-3">
+                <!-- メールに関するBootstrap Iconsのアイコンを「メール：」の左に追加 -->
+                <img class="mb-1" src="icons/envelope.svg" alt="メール"> <strong>メール：</strong>
+            </div>
+
+            <!-- 576px以上の画面幅のとき、右側は9つ分のカラム幅で表示する指定を追加 ⇒ col-sm-9  -->
+            <div class="col-sm-9">
+                <p>
+                    プライバシーポリシーをご確認いただき、ご同意の上で、送信ボタンをクリックしてください。<br />
+                    お問い合わせの内容は、受付日から3営業日以内をめどにご返信いたします。
+                </p>
+                <form action="complete.html">
+                    <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加>
+                    <div class="mb-3 container">
+                        <!-- 576px以上の画面幅のとき、ラベルは3つ分のカラム幅で表示する指定を追加 -->
+                        <label class="col-form-label col-sm-3">会社名：</label>
+
+                        <!-- 576px以上の画面幅のとき、フォーム部品は9つ分のカラム幅で表示する指定を追加 ⇒ col-sm-9-->
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="company">
+                        </div>
+                    </div>
+
+                    <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
+                    <div class="mb-3 container">
+                        <!-- 576px以上の画面幅のとき、ラベルは3つ分のカラム幅で表示する指定を追加 -->
+                        <label class="col-form-label col-sm-3">氏名：</label>
+
+                        <!-- 576px以上の画面幅のとき、フォーム部品は9つ分のカラム幅で表示する指定を追加 -->
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="name">
+                        </div>
+                    </div>
+
+                    <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
+                    <div class="mb-3 container">
+                        <!-- 576px以上の画面幅のとき、ラベルは3つ分のカラム幅で表示する指定を追加 -->
+                        <label class="col-form-label col-sm-3">メール：</label>
+
+                        <!-- 576px以上の画面幅のとき、フォーム部品は9つ分のカラム幅で表示する指定を追加 -->
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="mail">
+                        </div>
+                    </div>
+
+                    <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
+                    <div class="mb-3 container">
+                        <!-- 576px以上の画面幅のとき、ラベルは3つ分のカラム幅で表示する指定を追加 -->
+                        <label class="col-form-label col-sm-3">電話番号：</label>
+
+                        <!-- 576px以上の画面幅のとき、フォーム部品は9つ分のカラム幅で表示する指定を追加 -->
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="tel">
+                        </div>
+                    </div>
+
+                    <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
+                    <div class="mb-3 container">
+                        <!-- 576px以上の画面幅のとき、ラベルは3つ分のカラム幅で表示する指定を追加 -->
+                        <label class="col-form-label col-sm-3">内容：</label>
+
+                        <!-- 576px以上の画面幅のとき、フォーム部品は9つ分のカラム幅で表示する指定を追加 -->
+                        <div class="col-sm-9">
+                            <textarea class="form-control" name="content"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
+                    <div class="mb-3 container">
+                        <!-- 576px以上の画面幅のとき、3つ分のカラム幅の隙間を表示する設定を追加 -->
+                        <!-- さらに、576px以上の画面幅のとき、9つ分のカラム幅で送信ボタンの表示部分の設定を追加 -->
+                        <div class="offset-sm-3 col-sm-9">
+                            <!-- 送信ボタンを緑色にする設定を追加 -->
+                            <button type="submit" class="btn w-100 alert alert-success">お問い合わせ内容を送信する</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center pt-3 border-top">
+        &copy; 2021 SAMPLE Inc.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
