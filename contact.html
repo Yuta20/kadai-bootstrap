@@ -58,8 +58,8 @@
     「平日10時〜19時（土日・祝日は対応しておりません）」と書かれた部分をカードの本文部分としましょう
 「営業時間」の左にBootstrap Iconsのアイコンを表示しましょう。アイコンは、アイコンは、見本と同じ見た目のものを選んでください。<img> に、適切な altテキスト を設定してください
 -->
-        <!-- グリッドを使うための指定を追加 ⇒ container-->
-        <div class="container mt-4">
+        <!-- グリッドを使うための指定を追加 ⇒  row -->
+        <div class="row mt-4">
             <!-- 576px以上の画面幅のとき、左側は3つ分のカラム幅で表示する指定を追加 ⇒ col-sm-3 -->
             <div class="col-sm-3">
                 <!-- 電話に関するBootstrap Iconsのアイコンを「お電話：」の左に追加 -->
@@ -128,8 +128,8 @@
 送信ボタンは、緑色にしましょう
 送信ボタンは、指定のカラム数の幅に対して100％の幅でボタンが表示されるようにしましょう
 -->
-        <!-- グリッドを使うための指定を追加 ⇒ container -->
-        <div class="container mt-4">
+        <!-- グリッドを使うための指定を追加 ⇒ row-->
+        <div class="row mt-4">
             <!-- 576px以上の画面幅のとき、左側は3つ分のカラム幅で表示する指定を追加 ⇒ col-sm-3 -->
             <div class="col-sm-3">
                 <!-- メールに関するBootstrap Iconsのアイコンを「メール：」の左に追加 -->
@@ -143,19 +143,20 @@
                     お問い合わせの内容は、受付日から3営業日以内をめどにご返信いたします。
                 </p>
                 <form action="complete.html">
-                    <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加>
-                    <div class="mb-3 container">
+
+                    <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
+                    <div class="mb-3 row">
                         <!-- 576px以上の画面幅のとき、ラベルは3つ分のカラム幅で表示する指定を追加 -->
                         <label class="col-form-label col-sm-3">会社名：</label>
 
-                        <!-- 576px以上の画面幅のとき、フォーム部品は9つ分のカラム幅で表示する指定を追加 ⇒ col-sm-9-->
+                        <!-- 576px以上の画面幅のとき、フォーム部品は9つ分のカラム幅で表示する指定を追加 -->
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="company">
                         </div>
                     </div>
 
                     <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
-                    <div class="mb-3 container">
+                    <div class="mb-3 row">
                         <!-- 576px以上の画面幅のとき、ラベルは3つ分のカラム幅で表示する指定を追加 -->
                         <label class="col-form-label col-sm-3">氏名：</label>
 
@@ -166,7 +167,7 @@
                     </div>
 
                     <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
-                    <div class="mb-3 container">
+                    <div class="mb-3 row">
                         <!-- 576px以上の画面幅のとき、ラベルは3つ分のカラム幅で表示する指定を追加 -->
                         <label class="col-form-label col-sm-3">メール：</label>
 
@@ -177,7 +178,7 @@
                     </div>
 
                     <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
-                    <div class="mb-3 container">
+                    <div class="mb-3 row">
                         <!-- 576px以上の画面幅のとき、ラベルは3つ分のカラム幅で表示する指定を追加 -->
                         <label class="col-form-label col-sm-3">電話番号：</label>
 
@@ -188,7 +189,7 @@
                     </div>
 
                     <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
-                    <div class="mb-3 container">
+                    <div class="mb-3 row">
                         <!-- 576px以上の画面幅のとき、ラベルは3つ分のカラム幅で表示する指定を追加 -->
                         <label class="col-form-label col-sm-3">内容：</label>
 
@@ -199,12 +200,12 @@
                     </div>
 
                     <!-- ラベルとフォーム部品を並べるためにグリッドを使う指定を追加 -->
-                    <div class="mb-3 container">
+                    <div class="mb-3 row">
                         <!-- 576px以上の画面幅のとき、3つ分のカラム幅の隙間を表示する設定を追加 -->
                         <!-- さらに、576px以上の画面幅のとき、9つ分のカラム幅で送信ボタンの表示部分の設定を追加 -->
                         <div class="offset-sm-3 col-sm-9">
                             <!-- 送信ボタンを緑色にする設定を追加 -->
-                            <button type="submit" class="btn w-100 alert alert-success">お問い合わせ内容を送信する</button>
+                            <button type="submit" class="btn btn-success w-100">お問い合わせ内容を送信する</button>
                         </div>
                     </div>
                 </form>
